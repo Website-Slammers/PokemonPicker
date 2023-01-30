@@ -34,7 +34,7 @@ const Picker = () =>{
             console.log(error)
         }
     }
-    //initial setup useEffect weh
+    //initial setup useEffect wehs
     useEffect(() =>{
         newPokemon()
     },[])

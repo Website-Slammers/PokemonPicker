@@ -81,6 +81,7 @@ const Picker = () =>{
                     
                 </button>
             }   
+            {/* pokemon object two */}
             {!Object.keys(pokemonData2).length?<div>There's no data</div>:
                 <button onClick={pokemonPickerRight} className="pokeButton" id="pokebutton2">
                     <div id="pokemonB">{pokemonData2.name}</div>

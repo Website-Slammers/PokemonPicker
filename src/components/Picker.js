@@ -25,7 +25,7 @@ const Picker = () =>{
             console.log("your fetch has failed, bitch")
         }
     }
-    //refreshes pokemon calls when used.
+    //refreshes pokemon calls when used. and stuff
     async function newPokemon(){
         try{
         setPokemonData(await fetchPokemonData(pokemonId))

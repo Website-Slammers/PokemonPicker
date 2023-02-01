@@ -205,7 +205,10 @@ const Picker = () =>{
     return(
         
         <div>
-            <header id="pokemonPicker">Pick a pokemon!</header>
+            <header>
+                <h1 id="pokemonPicker">P i c k- a-
+              p o k e m o n !</h1>
+            </header>
 
             <div id="pokeContainer">
             {!Object.keys(pokemonDataLeft).length?<div>There's no data</div>:

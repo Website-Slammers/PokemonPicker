@@ -70,13 +70,42 @@ h1{
 }
 
 /* PICKER Start */
-#pokeButton1 {
-  border: 3px solid blue;
-  background-image: url("https://cdnb.artstation.com/p/assets/images/images/055/030/081/large/ceriien-arts-sleeper-suicunelayoutpng-wmrk.jpg?1665958968")
+#left-and-right-container {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+
+#poke-button-left {
+  border: 10px solid blue;
+  border-radius: 20%;
+  display: flex;
+  flex-direction: column;
+  background-image: url("https://i.pinimg.com/originals/2b/3b/04/2b3b04771ccca26c3dd96d781b0117ca.jpg");
+  background-repeat: no-repeat;
 }
 
 #pokemon-left-name {
-  border: 5px solid red;
+  align-self: center;
+  width: 150px;
+  background-color: white;
+  border-radius: 20% 20% 0 0;
+}
+
+.pokemon-button-id {
+  background-color: white;
+  width: 150px;
+  position: relative;
+  left: 34.2%;
+}
+
+#poke-button-right {
+  border: 10px solid red;
+  border-radius: 20%;
+  display: flex;
+  flex-direction: column;
+  background-image: url("https://i.pinimg.com/originals/2b/3b/04/2b3b04771ccca26c3dd96d781b0117ca.jpg");
+  background-repeat: no-repeat;
 }
 
 
@@ -89,6 +118,7 @@ h1{
   -webkit-text-stroke: 1px #396bba;
   -webkit-text-fill-color: #ffe031;
   font-family: 'Faster One', cursive;
+  justify-content: center;
 }
 
 .pokeContainer{

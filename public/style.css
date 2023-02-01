@@ -1,4 +1,51 @@
-* {
+*{
   color: pink;
   background-color: #1e1e1e;
+}
+.pokeContainer{
+  display:flex;
+  width:100vw;
+  height:100vh;
+  flex-wrap: wrap;
+  gap:10px;
+
+}
+
+h1{
+  display: flex;
+  flex-wrap: center;
+}
+
+.pokeTitle{
+  color:rgb(218, 208, 208);
+  font-style:bold;
+  font-size:20px;
+  font-family: 'Coustard', serif;
+  text-shadow: 1px 1px rgb(148, 58, 58) ;
+}
+.pokeText{
+  margin-right:30px;
+  padding:0px 15px;
+}
+
+.pokebox{
+  background-color: rgb(50, 47, 72);
+  flex-direction: row;
+  display:flex;
+  width:30vw;
+  padding:10px;
+  box-shadow:2px 2px #2E3532;
+  border-radius:5%;
+}
+
+.pokeImg{
+  background-image: url("https://i.imgur.com/1qC1Bry.png");
+  background-size: 100%;
+  background-color: #202f28;
+  display:flex;
+  height:150px;
+  width:150px;
+  align-self: flex-end;
+  text-align: right;
+  border-radius:50%;
 }

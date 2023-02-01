@@ -1,14 +1,14 @@
 import './pokeball.css'
 
 
-  <div className="ball">
-  <div className ="red">
-    <div className = "white"></div>
+  <div className="pokeball-ball">
+  <div className ="pokeball-red">
+    <div className = "pokeball-white"></div>
   </div>
 
-  <div className = "belt"></div>
-  <div className = "circle">
-    <div className = "inner-circle"></div>
+  <div className = "pokeball-belt"></div>
+  <div className = "pokeball-circle">
+    <div className = "pokeball-inner-circle"></div>
   </div>
 </div>
 

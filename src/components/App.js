@@ -21,7 +21,7 @@ const App = () =>{
 
             <footer>
                 <span className="tech-lang">
-                    React, Logic and API calls:</span><br />
+                    React, Logic, and API calls:</span><br />
                 <span id="ian-font">
                     Engineered by Ian</span><br />
                 <span className="tech-lang">

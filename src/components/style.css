@@ -1,5 +1,6 @@
 @import url('https://fonts.cdnfonts.com/css/swagger');
 @import url('https://fonts.googleapis.com/css2?family=Coustard&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Faster+One&display=swap');
 
 body{
   color: pink;
@@ -49,6 +50,15 @@ nav a {
 h1{
   display: flex;
   flex-wrap: center;
+}
+
+/* STATS Start */
+
+#stats-head {
+  font-size: 80px;
+  -webkit-text-stroke: 1px #396bba;
+  -webkit-text-fill-color: #ffe031;
+  font-family: 'Faster One', cursive;
 }
 
 .pokeTitle{

@@ -2,6 +2,8 @@ import React, {useState, useEffect} from "react";
 import Navbar from "./Navbar";
 import { Outlet } from 'react-router-dom';
 
+import './pokeball.js'
+
 const App = () =>{
     const [pokemonScaler, setPokemonScaler] = useState({});
 

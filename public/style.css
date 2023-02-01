@@ -1,14 +1,47 @@
+@import url('https://fonts.cdnfonts.com/css/swagger');
+
 *{
   color: pink;
   background-color: #1e1e1e;
 }
+
+/* NavBar Start */
+
+#nav-return {
+  border: 5px solid red;
+  display: flex;
+  justify-content: center;
+}
+
+#nav-main {
+  width: 400px;
+  border: 3px solid white;
+  /* align-content: space-around; */
+}
+
+nav a {
+  text-decoration: none;
+}
+
+.nav-title {
+  font-family: 'Swagger', sans-serif;
+  padding: 0px 10px;
+  border: 3px solid blue;
+  margin: 0px 22px;
+  font-weight: bolder;
+  font-size: 34px;
+  -webkit-text-stroke: 0.5px blue;
+  -webkit-text-fill-color: white;
+}
+
+/* Navbar End */
+
 .pokeContainer{
   display:flex;
   width:100vw;
   height:100vh;
   flex-wrap: wrap;
   gap:10px;
-
 }
 
 h1{
@@ -21,11 +54,18 @@ h1{
   font-style:bold;
   font-size:20px;
   font-family: 'Coustard', serif;
+  /* font-family: 'Swagger', sans-serif;
+  font-size: 30px;; */
   text-shadow: 1px 1px rgb(148, 58, 58) ;
+  width: 200px;
 }
+
 .pokeText{
   margin-right:30px;
   padding:0px 15px;
+  border-radius: 5%;
+  font-family: 'Swagger', sans-serif;
+  /* font-family: 'Coustard', serif; */
 }
 
 .pokebox{
@@ -36,6 +76,7 @@ h1{
   padding:10px;
   box-shadow:2px 2px #2E3532;
   border-radius:5%;
+
 }
 
 .pokeImg{

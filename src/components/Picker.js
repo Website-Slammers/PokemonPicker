@@ -94,6 +94,7 @@ const Picker = () =>{
                     types: newObj.types,
                     wins: newObj.wins,
                     losses: newObj.losses+1,
+                    netScore: newObj.wins -newObj.losses-1,
                     pokemonWins: [...newObj.pokemonWins],
                     image: pokemonDataRight.sprites.front_default
                 },...objectR})
@@ -105,6 +106,7 @@ const Picker = () =>{
                     types: pokemonDataRight.types,
                     wins: 0,
                     losses: 1,
+                    netScore: -1,
                     pokemonWins: [],
                     image: pokemonDataRight.sprites.front_default
                 }})
@@ -123,6 +125,7 @@ const Picker = () =>{
                     types: newObj2.types,
                     wins: newObj2.wins+1,
                     losses: newObj2.losses,
+                    netScore: newObj2.wins -newObj2.losses+1,
                     pokemonWins: [...newObj2.pokemonWins,(pokemonDataRight.id)],
                     image: pokemonDataLeft.sprites.front_default
                 },...objectR})
@@ -136,6 +139,7 @@ const Picker = () =>{
                     types: pokemonDataLeft.types,
                     wins: 1,
                     losses: 0,
+                    netScore: 1,
                     pokemonWins: [pokemonDataRight.id],
                     image: pokemonDataLeft.sprites.front_default
                 }})
@@ -161,6 +165,7 @@ const Picker = () =>{
                     types: newObj2.types,
                     wins: newObj2.wins,
                     losses: newObj2.losses+1,
+                    netScore:newObj2.wins -newObj2.losses-1,
                     pokemonWins: [...newObj2.pokemonWins],
                     image: pokemonDataLeft.sprites.front_default
                 }})
@@ -172,6 +177,7 @@ const Picker = () =>{
                     types: pokemonDataLeft.types,
                     wins: 0, 
                     losses: 1, 
+                    netScore: -1,
                     pokemonWins: [],
                     image: pokemonDataLeft.sprites.front_default
             }})
@@ -191,6 +197,7 @@ const Picker = () =>{
                     types: newObj.types,
                     wins: newObj.wins+1,
                     losses: newObj.losses,
+                    netScore: newObj.wins -newObj.losses+1,
                     pokemonWins: [...newObj.pokemonWins,(pokemonDataLeft.id)],
                     image: pokemonDataRight.sprites.front_default
                 },...objectL})
@@ -204,6 +211,7 @@ const Picker = () =>{
                 types: pokemonDataRight.types ,
                 wins: 1, 
                 losses: 0, 
+                netScore: 1,
                 pokemonWins: [pokemonDataLeft.id],
                 image: pokemonDataRight.sprites.front_default
             }})

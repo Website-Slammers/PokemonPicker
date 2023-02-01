@@ -20,7 +20,13 @@ const App = () =>{
             }}/>
 
             <footer>
-                Footer
+                <span className="tech-lang">
+                    React, Logic and API calls:</span><br />
+                <span id="ian-font">
+                    Engineered by Ian</span><br />
+                <span className="tech-lang">
+                React, CSS:</span><br />
+                Developed by <span id="drew-font">Drewford</span>
             </footer>
         </div>
     )

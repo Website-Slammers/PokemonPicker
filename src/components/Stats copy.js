@@ -1,6 +1,7 @@
 import React, { useEffect,useState } from "react";
 import {useOutletContext} from "react-router-dom";
 
+//leave me alone!
 
 const Stats = ()=>{
     const {pokemonScalerObj: [pokemonScaler,setPokemonScaler]} = useOutletContext();
@@ -10,36 +11,20 @@ const Stats = ()=>{
         if(localStorage.getItem("pokemonObj")){
             const {pokemonObj} = JSON.parse(localStorage.getItem("pokemonObj"))
             setPokemonScaler(pokemonObj);
-            pokemonArray = Object.entries(pokemonObj);
-            pokemonWinSorter (pokemonArray)
-            console.log(pokemonArray); 
-
+            pokemonArray = pokemonObj;
         }
 
     },[])
 
-    const pokemonWinSorter =(array)=>{
-        let sortedArray = array.sort()
-        //wins //id number
-        
-
-
-
-        // return sortedArray
-    }
-
-    const recursiveSorter = ()=>{
-
-    }
-
 //display pokemon in terms of who has won the most.
     return(
         <div>
-            <h1 id="stats-head">S t a t s</h1>
+            <h1>Stats</h1>
             
             <div className="pokeContainer">
             {pokemonScaler?
             Object.keys(pokemonScaler).map((pokemon)=>{
+                console.log(pokemon)
                 return(
                     <div className= "pokebox">
                         <div className = "pokeText">
@@ -63,4 +48,4 @@ const Stats = ()=>{
     )
 }
 
-export default Stats;
+// export default Stats;

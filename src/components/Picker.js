@@ -90,6 +90,7 @@ const Picker = () =>{
                 [inputs]:
                 {
                     id: newObj.id,
+                    name: pokemonDataRight.name,
                     types: newObj.types,
                     wins: newObj.wins,
                     losses: newObj.losses+1,
@@ -98,12 +99,14 @@ const Picker = () =>{
                 },...objectR})
         }else{
             objectR = ({[pokemonDataRight.name]: 
-                {id: pokemonDataRight.id,
-                types: pokemonDataRight.types,
-                wins: 0,
-                losses: 1,
-                pokemonWins: [],
-                image: pokemonDataRight.sprites.front_default
+                {
+                    id: pokemonDataRight.id,
+                    name: pokemonDataRight.name,
+                    types: pokemonDataRight.types,
+                    wins: 0,
+                    losses: 1,
+                    pokemonWins: [],
+                    image: pokemonDataRight.sprites.front_default
                 }})
         }
 
@@ -116,6 +119,7 @@ const Picker = () =>{
                 [inputL]:
                 {
                     id: newObj2.id,
+                    name: pokemonDataLeft.name,
                     types: newObj2.types,
                     wins: newObj2.wins+1,
                     losses: newObj2.losses,
@@ -126,12 +130,14 @@ const Picker = () =>{
         //if the pokemon scaler does not have the name
         else{
             setPokemonScaler({...pokemonScaler, [pokemonDataLeft.name]: 
-                {id: pokemonDataLeft.id,
-                types: pokemonDataLeft.types,
-                wins: 1,
-                losses: 0,
-                pokemonWins: [pokemonDataRight.id],
-                image: pokemonDataLeft.sprites.front_default
+                {
+                    id: pokemonDataLeft.id,
+                    name: pokemonDataLeft.name,
+                    types: pokemonDataLeft.types,
+                    wins: 1,
+                    losses: 0,
+                    pokemonWins: [pokemonDataRight.id],
+                    image: pokemonDataLeft.sprites.front_default
                 }})
         }
 
@@ -151,6 +157,7 @@ const Picker = () =>{
                 [inputL]:
                 {
                     id: newObj2.id,
+                    name: pokemonDataLeft.name,
                     types: newObj2.types,
                     wins: newObj2.wins,
                     losses: newObj2.losses+1,
@@ -159,12 +166,14 @@ const Picker = () =>{
                 }})
         }else{ //loss data for left saved if there isn't already loss data
             objectL = ({[pokemonDataLeft.name]: 
-                {id: pokemonDataLeft.id,
-                types: pokemonDataLeft.types,
-                wins: 0, 
-                losses: 1, 
-                pokemonWins: [],
-                image: pokemonDataLeft.sprites.front_default
+                {
+                    id: pokemonDataLeft.id,
+                    name: pokemonDataLeft.name,
+                    types: pokemonDataLeft.types,
+                    wins: 0, 
+                    losses: 1, 
+                    pokemonWins: [],
+                    image: pokemonDataLeft.sprites.front_default
             }})
         }
 
@@ -178,6 +187,7 @@ const Picker = () =>{
                 [inputR]:
                 {
                     id: newObj.id,
+                    name: pokemonDataRight.name,
                     types: newObj.types,
                     wins: newObj.wins+1,
                     losses: newObj.losses,
@@ -188,7 +198,9 @@ const Picker = () =>{
         //if the pokemon scaler does not have the name
         else{
             setPokemonScaler({...pokemonScaler, [pokemonDataRight.name]: 
-                {id: pokemonDataRight.id,
+                {
+                id: pokemonDataRight.id,
+                name: pokemonDataRight.name,
                 types: pokemonDataRight.types ,
                 wins: 1, 
                 losses: 0, 

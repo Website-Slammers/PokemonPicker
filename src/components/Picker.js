@@ -230,17 +230,17 @@ const Picker = () =>{
               p o k e m o n !</h1>
             </header>
 
-            <div id="pokeContainer">
+            <div id="left-and-right-container">
             {!Object.keys(pokemonDataLeft).length?<div>There's no data</div>:
-                <button onClick={pokemonPickerLeft} className="pokeButton" id="pokeButton1">
-                    <div id="pokemonB">{pokemonDataLeft.name}</div>
-                    <div >{pokemonDataLeft.id}</div>
+                <button onClick={pokemonPickerLeft} className="poke-button" id="poke-button-left">
+                    <div id="pokemon-left-name">{pokemonDataLeft.name}</div>
+                    <div className="pokemon-button-id">{pokemonDataLeft.id}</div>
                     {
                         Object.keys(pokemonDataLeft).length&&pokemonDataLeft.types.length?<div>{pokemonDataLeft.types[0].type.name}</div>:<div>whoops!</div>
                     }
                     {
                         Object.keys(pokemonDataLeft).length&&Object.keys(pokemonDataLeft.sprites).length?
-                        <div id="pokemonBimg">
+                        <div id="pokemonLimg">
                             <img src={pokemonDataLeft.sprites.other['official-artwork'].front_default}/>
                         </div>:<div>loading</div>
                     }
@@ -249,15 +249,15 @@ const Picker = () =>{
             }   
             {/* pokemon object two */}
             {!Object.keys(pokemonDataRight).length?<div>There's no data</div>:
-                <button onClick={pokemonPickerRight} className="pokeButton" id="pokebutton2">
-                    <div id="pokemonB">{pokemonDataRight.name}</div>
+                <button onClick={pokemonPickerRight} className="pokeButton" id="poke-button-right">
+                    <div id="pokemonR">{pokemonDataRight.name}</div>
                     <div >{pokemonDataRight.id}</div>
                     {
                         Object.keys(pokemonDataRight).length&&pokemonDataRight.types.length?<div>{pokemonDataRight.types[0].type.name}</div>:<div>whoops!</div>
                     }
                     {
                         Object.keys(pokemonDataRight).length&&Object.keys(pokemonDataRight.sprites).length?
-                        <div id="pokemonBimg">
+                        <div id="pokemonRimg">
                             <img src={pokemonDataRight.sprites.other['official-artwork'].front_default}/>
                         </div>:<div>loading</div>
                     }

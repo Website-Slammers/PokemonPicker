@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import {useOutletContext} from "react-router-dom";
+import tokenMaker from "./tokenMaker";
 
 const Picker = () =>{
     const [pokemonDataLeft, setPokemonDataLeft] = useState({})
@@ -68,47 +69,74 @@ const Picker = () =>{
             console.log(error)
         }
     }
+    
     //initial setup useEffect wehs
     useEffect(() =>{
+        if(localStorage.getItem("pokemonObj")){
+            let {pokemonObj} = JSON.parse(localStorage.getItem("pokemonObj"))
+            console.log(pokemonObj)
+            setPokemonScaler(pokemonObj)
+        }
         newPokemon()
     },[])
 
     //pokemon left was picked
     const pokemonPickerLeft = (event)=>{
         let objectR = {};
-        let inputs = pokemonDataRight.name;
-        if(pokemonScaler[inputs]){
+        let inputs = pokemonDataRight.name; 
+        let newObj = pokemonScaler[inputs];
+        if(newObj){
             objectR = ({
                 [inputs]:
                 {
-                    wins: pokemonScaler[inputs].wins,
-                    losses: pokemonScaler[inputs].losses+1,
-                    pokemonWins: [...pokemonScaler[inputs].pokemonWins]
-                }})
+                    id: newObj.id,
+                    types: newObj.types,
+                    wins: newObj.wins,
+                    losses: newObj.losses+1,
+                    pokemonWins: [...newObj.pokemonWins],
+                    image: pokemonDataLeft.sprites.front_default
+                },...objectR})
         }else{
             objectR = ({[pokemonDataRight.name]: 
-            {wins: 0, losses: 1, pokemonWins: []}})
+                {id: pokemonDataRight.id,
+                types: pokemonDataRight.types,
+                wins: 0,
+                losses: 1,
+                pokemonWins: [],
+                image: pokemonDataLeft.sprites.front_default
+                }})
         }
 
         let inputL = pokemonDataLeft.name;
+        let newObj2 = pokemonScaler[inputL];
         //if the pokemon Scaler has the pokemon name 
         if(pokemonScaler[inputL]){
-            console.log("pokemon wins " , pokemonScaler[inputL].pokemonWins);
+            console.log("pokemon wins " , newObj2.pokemonWins);
             setPokemonScaler({...pokemonScaler,
                 [inputL]:
                 {
-                    wins: pokemonScaler[inputL].wins+1,
-                    losses: pokemonScaler[inputL].losses,
-                    pokemonWins: [...pokemonScaler[inputL].pokemonWins,(pokemonDataRight.id)]
+                    id: newObj2.id,
+                    types: newObj2.types,
+                    wins: newObj2.wins+1,
+                    losses: newObj2.losses,
+                    pokemonWins: [...newObj2.pokemonWins,(pokemonDataRight.id)],
+                    image: pokemonDataLeft.sprites.front_default
                 },...objectR})
         }
         //if the pokemon scaler does not have the name
         else{
             setPokemonScaler({...pokemonScaler, [pokemonDataLeft.name]: 
-            {wins: 1, losses: 0, pokemonWins: [pokemonDataRight.id]},...objectR})
+                {id: pokemonDataLeft.id,
+                types: pokemonDataLeft.types,
+                wins: 1,
+                losses: 0,
+                pokemonWins: [pokemonDataRight.id],
+                image: pokemonDataLeft.sprites.front_default
+                }})
         }
 
-        console.log(pokemonScaler)
+        console.log(pokemonScaler);
+        tokenMaker(pokemonScaler);
         newPokemonR()
     }
 
@@ -116,38 +144,61 @@ const Picker = () =>{
     const pokemonPickerRight = (event)=>{
         let objectL = {};
         let inputL = pokemonDataLeft.name;
+        let newObj2 = pokemonScaler[inputL];
+        //loss data for left saved
         if(pokemonScaler[inputL]){
             objectL = ({
                 [inputL]:
                 {
-                    wins: pokemonScaler[inputL].wins,
-                    losses: pokemonScaler[inputL].losses+1,
-                    pokemonWins: [...pokemonScaler[inputL].pokemonWins]
+                    id: newObj2.id,
+                    types: newObj2.types,
+                    wins: newObj2.wins,
+                    losses: newObj2.losses+1,
+                    pokemonWins: [...newObj2.pokemonWins],
+                    image: pokemonDataLeft.sprites.front_default
                 }})
-        }else{
+        }else{ //loss data for left saved if there isn't already loss data
             objectL = ({[pokemonDataLeft.name]: 
-            {wins: 0, losses: 1, pokemonWins: []}})
+                {id: pokemonDataLeft.id,
+                types: pokemonDataLeft.types,
+                wins: 0, 
+                losses: 1, 
+                pokemonWins: [],
+                image: pokemonDataLeft.sprites.front_default
+            }})
         }
 
         let inputR = pokemonDataRight.name;
-        //if the pokemon Scaler has the pokemon name 
-        if(pokemonScaler[inputR]){
-            console.log("pokemon wins " , pokemonScaler[inputR].pokemonWins);
+        let newObj = pokemonScaler[inputR];
+
+        //victory for the right saved
+        if(newObj){
+            console.log("pokemon wins " , newObj.pokemonWins);
             setPokemonScaler({...pokemonScaler,
                 [inputR]:
                 {
-                    wins: pokemonScaler[inputR].wins+1,
-                    losses: pokemonScaler[inputR].losses,
-                    pokemonWins: [...pokemonScaler[inputR].pokemonWins,(pokemonDataLeft.id)]
+                    id: newObj.id,
+                    types: newObj.types,
+                    wins: newObj.wins+1,
+                    losses: newObj.losses,
+                    pokemonWins: [...newObj.pokemonWins,(pokemonDataLeft.id)],
+                    image: pokemonDataRight.sprites.front_default
                 },...objectL})
         }
         //if the pokemon scaler does not have the name
         else{
             setPokemonScaler({...pokemonScaler, [pokemonDataRight.name]: 
-            {wins: 1, losses: 0, pokemonWins: [pokemonDataLeft.id]},...objectL})
+                {id: pokemonDataRight.id,
+                types: pokemonDataRight.types ,
+                wins: 1, 
+                losses: 0, 
+                pokemonWins: [pokemonDataLeft.id],
+                image: pokemonDataRight.sprites.front_default
+            }})
         }
 
         console.log(pokemonScaler)
+        tokenMaker(pokemonScaler);
         newPokemonL()
     }
     

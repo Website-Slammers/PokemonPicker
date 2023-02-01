@@ -1,4 +1,33 @@
-* {
+*{
   color: pink;
   background-color: #1e1e1e;
+}
+.pokeContainer{
+  display:flex;
+  width:100vw;
+  height:100vh;
+  flex-wrap: wrap;
+
+}
+
+h1{
+  display: flex;
+  flex-wrap: center;
+}
+
+.pokebox{
+    background-color: rgb(50, 47, 72);
+    flex-direction: row;
+    width:30vw;
+    padding:10px;
+    box-shadow: white, 2px, 2px;
+    border:5px solid rgb(116, 57, 57);
+}
+
+.pokeImg{
+  background-color: rgb(50, 47, 72);
+  display:flex;
+  height:85px;
+  width:85px;
+  align-self: flex-end;
 }

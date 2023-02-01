@@ -12,18 +12,41 @@ const Stats = ()=>{
             const {pokemonObj} = JSON.parse(localStorage.getItem("pokemonObj"))
             setPokemonScaler(pokemonObj);
             pokemonArray = Object.entries(pokemonObj);
-            pokemonWinSorter (pokemonArray)
-            console.log(pokemonArray); 
-
+            // pokemonArray = pokemonTypeSorter(pokemonArray, ["fire"])
+            pokemonArray = pokemonWinSorter(pokemonArray);
         }
         setSortedPokemon(pokemonArray);
 
     },[])
 
+    const pokemonTypeSorter = (array,searchTypes)=>{
+        let filteredArray = []
+        for(let i=0;i<searchTypes.length;i++){
+            filteredArray = array.filter((pokemon) =>{
+                if(pokemon[1].types[1]){
+                    if(searchTypes[i] == pokemon[1].types[0].type.name || searchTypes[i] == pokemon[1].types[1].type.name){
+                        return pokemon;
+                    }
+                }else if(searchTypes[i] == pokemon[1].types[0].type.name)
+                    {
+                        console.log("here " , pokemon)
+                        return pokemon;
+                    }
+                
+            })
+        }
+        console.log("wtf", filteredArray);
+        return filteredArray;
+    }
+    
+    const pokemonIdSorter = (array)=>{
+        let sortedArray = array.sort((a,b)=>a[1].id - b[1].id);
+        console.log(sortedArray);
+        return sortedArray;
+    }
     const pokemonWinSorter =(array)=>{
         let sortedArray = array.sort((b, a) =>a[1].netScore - b[1].netScore);
         //wins //id number
-        console.log(sortedArray);
         return sortedArray
     }
 

@@ -10,7 +10,7 @@ const Stats = ()=>{
         if(localStorage.getItem("pokemonObj")){
             const {pokemonObj} = JSON.parse(localStorage.getItem("pokemonObj"))
             setPokemonScaler(pokemonObj);
-            
+            pokemonArray = pokemonObj;
         }
 
     },[])

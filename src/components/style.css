@@ -1,0 +1,147 @@
+@import url('https://fonts.cdnfonts.com/css/swagger');
+@import url('https://fonts.googleapis.com/css2?family=Coustard&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Faster+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
+body{
+  color: pink;
+  background-color: #1e1e1e;
+}
+
+header {
+  text-align: center;
+}
+
+/* FOOTER Start */
+
+footer {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.tech-lang {
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+#ian-font {
+  font-family: 'Share Tech Mono', monospace;
+}
+
+#drew-font {
+  font-family: 'Berkshire Swash', cursive;
+}
+
+/* FOOTER End */
+
+/* NavBar Start */
+
+#nav-return {
+  /* border: 5px solid red; */
+  display: flex;
+  justify-content: center;
+}
+
+#nav-main {
+  width: 600px;
+  /* border: 3px solid white; */
+  text-align: center;
+}
+
+nav a {
+  text-decoration: none;
+}
+
+.nav-title {
+  font-family: 'Swagger', sans-serif;
+  /* padding: 0px 10px; */
+  /* border: 3px solid blue; */
+  margin: 0px 22px;
+}
+
+/* Navbar End */
+
+
+
+h1{
+  display: flex;
+  flex-wrap: center;
+}
+
+/* STATS Start */
+
+#stats-head, #pokemonPicker, #about-head {
+  font-size: 80px;
+  -webkit-text-stroke: 1px #396bba;
+  -webkit-text-fill-color: #ffe031;
+  font-family: 'Faster One', cursive;
+}
+
+.pokeContainer{
+  display:flex;
+  width:100vw;
+  /* height:100vh; */
+  flex-wrap: wrap;
+  gap:10px;
+}
+
+.pokeTitle{
+  color:rgb(218, 208, 208);
+  font-style:bold;
+  font-size:20px;
+  font-family: 'Coustard', serif;
+  /* font-family: 'Swagger', sans-serif;
+  font-size: 30px;; */
+  text-shadow: 1px 1px rgb(148, 58, 58) ;
+  width: 220px;
+}
+
+.pokeText{
+  margin-right:30px;
+  padding:0px 15px;
+  border-radius: 5%;
+  font-family: 'Swagger', sans-serif;
+  /* font-family: 'Coustard', serif; */
+}
+
+.pokebox{
+  background-color: rgb(50, 47, 72);
+  flex-direction: row;
+  display:flex;
+  width:30vw;
+  padding:10px;
+  box-shadow:2px 2px #2E3532;
+  border-radius:5%;
+  height: 160px;
+  border: 5px solid grey;
+}
+
+.pokeImg{
+  background-image: url("https://i.imgur.com/1qC1Bry.png");
+  background-size: 100%;
+  background-color: #202f28;
+  display:flex;
+  height:150px;
+  width:150px;
+  align-self: flex-end;
+  text-align: right;
+  border-radius:50%;
+}
+
+/* STATS End */
+
+/* ABOUT Start */
+
+#about-article-flexbox {
+  /* border: 5px solid red; */
+  display: flex;
+  justify-content: center;
+}
+
+#about-article-flexbox article {
+  width: 500px;
+  /* border: 5px solid white; */
+}
+
+/* ABOUT End */

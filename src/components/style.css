@@ -69,6 +69,19 @@ h1{
   flex-wrap: center;
 }
 
+/* PICKER Start */
+#pokeButton1 {
+  border: 3px solid blue;
+  background-image: url("https://cdnb.artstation.com/p/assets/images/images/055/030/081/large/ceriien-arts-sleeper-suicunelayoutpng-wmrk.jpg?1665958968")
+}
+
+#pokemon-left-name {
+  border: 5px solid red;
+}
+
+
+/* PICKER End */
+
 /* STATS Start */
 
 #stats-head, #pokemonPicker, #about-head {

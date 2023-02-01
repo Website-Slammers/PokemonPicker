@@ -18,7 +18,7 @@ const Stats = ()=>{
 //display pokemon in terms of who has won the most.
     return(
         <div>
-            <h1>Stats</h1>
+            <h1 id="stats-head">S t a t s</h1>
             
             <div className="pokeContainer">
             {pokemonScaler?

@@ -1,22 +1,18 @@
-* {
-  background-color: #625c5c;
-}
-
-.ball {
+.pokeball-ball {
   height: 500px;
   width: 500px;
   border-radius: 50%;
   border: 30px solid black;
 }
 
-.red {
+.pokeball-red {
   height: 500px;
   width: 500px;
   background-color: red;
   border-radius: 50%;
 }
 
-.white {
+.pokeball-white {
   height: 250px;
   width: 500px;
   background-color: white;
@@ -25,7 +21,7 @@
   top: 50%;
 }
 
-.belt {
+.pokeball-belt {
   width: 103%;
   height: 8%;
   position: relative;
@@ -34,7 +30,7 @@
   background-color: black;
 }
 
-.circle {
+.pokeball-circle {
   height: 20%;
   width: 20%;
   border-radius: 50%;
@@ -45,7 +41,7 @@
   border: 15px solid black;
 }
 
-.inner-circle {
+.pokeball-inner-circle {
   height: 50%;
   width: 50%;
   background-color: white;

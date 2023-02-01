@@ -94,7 +94,7 @@ const Picker = () =>{
                     wins: newObj.wins,
                     losses: newObj.losses+1,
                     pokemonWins: [...newObj.pokemonWins],
-                    image: pokemonDataLeft.sprites.front_default
+                    image: pokemonDataRight.sprites.front_default
                 },...objectR})
         }else{
             objectR = ({[pokemonDataRight.name]: 
@@ -103,7 +103,7 @@ const Picker = () =>{
                 wins: 0,
                 losses: 1,
                 pokemonWins: [],
-                image: pokemonDataLeft.sprites.front_default
+                image: pokemonDataRight.sprites.front_default
                 }})
         }
 

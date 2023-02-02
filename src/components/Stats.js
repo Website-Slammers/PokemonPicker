@@ -5,6 +5,7 @@ import {useOutletContext} from "react-router-dom";
 const Stats = ()=>{
     const {pokemonScalerObj: [pokemonScaler,setPokemonScaler]} = useOutletContext();
     const [sortedPokemon, setSortedPokemon] = useState([]);
+    const [statSorter, setStatSorter] = useState("wins");
     let pokemonArray = [];
 
     useEffect(()=>{
@@ -17,7 +18,7 @@ const Stats = ()=>{
         }
         setSortedPokemon(pokemonArray);
 
-    },[])
+    },[statSorter])
 
     const pokemonTypeSorter = (array,searchTypes)=>{
         let filteredArray = []
@@ -50,11 +51,37 @@ const Stats = ()=>{
         return sortedArray
     }
 
+    const sortSwitcher=(event)=>{
+        event.preventDefault();
+        switch(event){
+            case 'wins':
+                break;
+            case 'number':
+                break;
+            case 'type':
+                break;
+            default:
+                break;
+    }
+
+
+    }
+
 //display pokemon in terms of who has won the most.
     return(
         <div>
             <h1 id="stats-head">S t a t s</h1>
-            
+
+            <form onSubmit= {sortSwitcher}>
+                <label form="sort">Sort by:</label>
+                <select name="sort" id="sort">
+                    <option value="wins">Wins</option>
+                    <option value="number">Number</option>
+                    <option value="type">Type</option>
+                </select>
+                <input type="submit" value={statSorter} onChange={(event)=>{setStatSorter(event.target.value)}} className='doesntmatter'/>
+            </form>
+
             <div className="pokeContainer">
             {sortedPokemon?
             sortedPokemon.map((pokemon)=>{

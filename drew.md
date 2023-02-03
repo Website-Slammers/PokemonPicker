@@ -25,3 +25,5 @@
 
 ## 2/2/13
 -Clean up HTML on Picker.js return statement
+-Added background image and gradient to main header
+-Added pointer to Picker.js buttons

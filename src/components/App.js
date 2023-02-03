@@ -11,7 +11,7 @@ const App = () =>{
 
     return(
         <div>
-            <header>
+            <header className="header-main">
                 {/* <h1>Pokemon Picker!</h1> */}
                 <img id="head-img" src="https://i.imgur.com/xotOQCg.png"></img>
             </header>

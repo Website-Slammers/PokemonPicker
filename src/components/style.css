@@ -10,6 +10,22 @@ body{
   background-color: #1e1e1e;
 }
 
+body {
+  padding: 20px;
+}
+
+.header-main {
+  text-align: center;
+  /* border: 5px solid red; */
+  background-image: linear-gradient(
+    to right bottom,
+    rgba(57,107,186, 0.8),
+    rgba(225,224,49, 0.8),
+    rgba(57,107,186, 0.8)),
+    url("https://i.imgur.com/Ohd8QYI.png");
+  margin-bottom: 10px;
+}
+
 header {
   text-align: center;
 }
@@ -63,13 +79,13 @@ nav a {
 /* Navbar End */
 
 
-
 h1{
   display: flex;
   flex-wrap: center;
 }
 
 /* PICKER Start */
+
 #left-and-right-container {
   display: flex;
   justify-content: center;
@@ -85,6 +101,7 @@ h1{
   background: cover; 
   position: relative;
   margin-top: 50px;
+  cursor: pointer;
 }
 
 #poke-button-right {
@@ -136,8 +153,8 @@ h1{
 
 #stats-head, #pokemonPicker, #about-head {
   font-size: 80px;
-  -webkit-text-stroke: 1px #396bba;
-  -webkit-text-fill-color: #ffe031;
+  -webkit-text-stroke: 1px rgb(57, 107, 186);
+  -webkit-text-fill-color: rgb(255, 224, 49);
   font-family: 'Faster One', cursive;
   justify-content: center;
 }

@@ -102,11 +102,11 @@ h2{
 @keyframes moveInLeft {
   0% {
     opacity: 0;
-    transform: -100px;
+    transform: translateX(-100px);
   }
 
   80% {
-    transform: 10px
+    transform: translateX(10px);
   }
 
   100% {

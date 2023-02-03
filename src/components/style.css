@@ -69,6 +69,48 @@ h1{
   flex-wrap: center;
 }
 
+/* PICKER Start */
+#left-and-right-container {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+
+#poke-button-left {
+  border: 10px solid blue;
+  border-radius: 20%;
+  display: flex;
+  flex-direction: column;
+  background-image: url("https://i.pinimg.com/originals/2b/3b/04/2b3b04771ccca26c3dd96d781b0117ca.jpg");
+  background-repeat: no-repeat;
+}
+
+#pokemon-left-name {
+  align-self: center;
+  width: 150px;
+  background-color: white;
+  border-radius: 20% 20% 0 0;
+}
+
+.pokemon-button-id {
+  background-color: white;
+  width: 150px;
+  position: relative;
+  left: 34.2%;
+}
+
+#poke-button-right {
+  border: 10px solid red;
+  border-radius: 20%;
+  display: flex;
+  flex-direction: column;
+  background-image: url("https://i.pinimg.com/originals/2b/3b/04/2b3b04771ccca26c3dd96d781b0117ca.jpg");
+  background-repeat: no-repeat;
+}
+
+
+/* PICKER End */
+
 /* STATS Start */
 
 #stats-head, #pokemonPicker, #about-head {
@@ -76,6 +118,7 @@ h1{
   -webkit-text-stroke: 1px #396bba;
   -webkit-text-fill-color: #ffe031;
   font-family: 'Faster One', cursive;
+  justify-content: center;
 }
 
 .pokeContainer{
@@ -133,14 +176,26 @@ h1{
 
 /* ABOUT Start */
 
+#about-return {
+  display: flex;
+  flex-direction: column;
+}
+
 #about-article-flexbox {
   /* border: 5px solid red; */
   display: flex;
   justify-content: center;
+  /* border: 5px solid yellow; */
+  background-image: url("https://i.imgur.com/xZnBqaC.png");
+  background-repeat: no-repeat;
+  height: 725px;
+  width: 600px;
 }
 
 #about-article-flexbox article {
   width: 500px;
+  margin-top: 45px;
+  font-size: 25px;
   /* border: 5px solid white; */
 }
 

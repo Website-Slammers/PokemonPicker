@@ -14,10 +14,19 @@ const Stats = ()=>{
             setPokemonScaler(pokemonObj);
             pokemonArray = Object.entries(pokemonObj);
             // pokemonArray = pokemonTypeSorter(pokemonArray, ["fire"])
+            console.log(pokemonArray);
             pokemonArray = pokemonWinSorter(pokemonArray);
         }
         setSortedPokemon(pokemonArray);
 
+    },[])
+
+    useEffect(()=>{
+        // pokemonArray = pokemonTypeSorter(pokemonArray, ["fire"])
+        const {pokemonObj} = JSON.parse(localStorage.getItem("pokemonObj"))
+            setPokemonScaler(pokemonObj);
+            pokemonArray = Object.entries(pokemonObj);
+        sortSwitcher(statSorter, pokemonArray)
     },[statSorter])
 
     const pokemonTypeSorter = (array,searchTypes)=>{
@@ -33,14 +42,15 @@ const Stats = ()=>{
                         console.log("here " , pokemon)
                         return pokemon;
                     }
-                
             })
         }
+        filteredArray = pokemonWinSorter(filteredArray);
         console.log("wtf", filteredArray);
         return filteredArray;
     }
     
     const pokemonIdSorter = (array)=>{
+        console.log(array);
         let sortedArray = array.sort((a,b)=>a[1].id - b[1].id);
         console.log(sortedArray);
         return sortedArray;
@@ -52,22 +62,20 @@ const Stats = ()=>{
         return sortedArray
     }
 
-    const sortSwitcher=(event)=>{
-        event.preventDefault();
-        switch(event){
-            case 'wins':
+    function sortSwitcher(statSorter, pokemonArray){
+        switch(statSorter){
+            case 'wins': setSortedPokemon(pokemonWinSorter(pokemonArray))
                 break;
-            case 'number':
+            case 'id': setSortedPokemon(pokemonIdSorter(pokemonArray))
                 break;
-            case 'type':
+            case 'type': setSortedPokemon(pokemonTypeSorter(pokemonArray, ['fire']))
                 break;
-            default:
-                break;
+            default: setSortedPokemon(pokemonWinSorter(pokemonArray))
+                break;  
     }
-
-
+        console.log(sortedPokemon)
+    
     }
-
 //display pokemon in terms of who has won the most.
     return(
         <div>
@@ -78,16 +86,13 @@ const Stats = ()=>{
                     S t a t s</span>
             </h2>
 
-            <form onSubmit= {sortSwitcher}>
-                <label form="sort">Sort by:</label>
-                <select name="sort" id="sort">
-                    <option value="wins">Wins</option>
-                    <option value="number">Number</option>
-                    <option value="type">Type</option>
-                </select>
-                <input type="submit" value={statSorter} onChange={(event)=>{setStatSorter(event.target.value)}} className='doesntmatter'/>
-            </form>
-            
+            <label form="sort">Sort by:</label>
+            <select name="sort" id="sort" value={statSorter} onChange={(event)=>{setStatSorter(event.target.value), console.log(event.target.value)}} >
+                <option value="wins">Wins</option>
+                <option value="id">Number</option>
+                <option value="type">Type</option>
+            </select>
+
             <div className="pokeContainer">
             {sortedPokemon?
             sortedPokemon.map((pokemon)=>{

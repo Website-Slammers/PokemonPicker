@@ -7,11 +7,12 @@
 -
 
 ## CSS Styles
--
+- Light Mode default, Dark Mode toggle
 
 ## CSS Animations
 -Navbar (didn't work first time)
   -behave like picker buttons
+  -try to move the css selector to img tag
 
 
 # Notes:

@@ -76,37 +76,58 @@ h1{
   gap: 40px;
 }
 
-#poke-button-left {
+#poke-button-left, #poke-button-right {
   border: 10px solid blue;
   border-radius: 20%;
   display: flex;
   flex-direction: column;
   background-image: url("https://i.pinimg.com/originals/2b/3b/04/2b3b04771ccca26c3dd96d781b0117ca.jpg");
-  background-repeat: no-repeat;
-}
-
-#pokemon-left-name {
-  align-self: center;
-  width: 150px;
-  background-color: white;
-  border-radius: 20% 20% 0 0;
-}
-
-.pokemon-button-id {
-  background-color: white;
-  width: 150px;
+  background: cover; 
   position: relative;
-  left: 34.2%;
+  margin-top: 50px;
 }
 
 #poke-button-right {
   border: 10px solid red;
-  border-radius: 20%;
-  display: flex;
-  flex-direction: column;
-  background-image: url("https://i.pinimg.com/originals/2b/3b/04/2b3b04771ccca26c3dd96d781b0117ca.jpg");
-  background-repeat: no-repeat;
+  /* see styles above */
 }
+
+.btn-info-box {
+  background-color: white;
+  position: absolute;
+  top: -12%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 8px 228px;
+  border-radius: 100px;
+  box-sizing: border-box;
+}
+
+.btn-info-box-left {
+  border: 5px solid blue;
+  color: darkblue;
+}
+
+.btn-info-box-right {
+  border: 5px solid red;
+  color: darkred;
+}
+
+.btn-name {
+  display: inline-block;
+  text-transform: capitalize;
+  margin-right: 5px;
+}
+
+.btn-id {
+  display: inline-block;
+}
+
+.btn-type {
+  display: block;
+}
+
+
 
 
 /* PICKER End */

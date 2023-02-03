@@ -4,6 +4,7 @@ import { Outlet } from 'react-router-dom';
 
 import './pokeball.js'
 import './style.css'
+import './animations.css'
 
 const App = () =>{
     const [pokemonScaler, setPokemonScaler] = useState({});

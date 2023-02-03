@@ -4,7 +4,7 @@
 # Goals:
 
 ## HTML
--Clean up HTML on Picker return statement
+-
 
 ## CSS Styles
 -Polish Pokemon info on picker.js
@@ -22,3 +22,6 @@
 -Set Font Styles and Colors
 -Added Styled Header, Nav, Picker Boxes, About
 -Added Footer
+
+## 2/2/13
+-Clean up HTML on Picker.js return statement

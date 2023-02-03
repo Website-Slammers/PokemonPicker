@@ -71,7 +71,12 @@ const Stats = ()=>{
 //display pokemon in terms of who has won the most.
     return(
         <div>
-            <h1 id="stats-head">S t a t s</h1>
+            
+
+            <h2 id="stats-head">
+                <span className="header-page">
+                    S t a t s</span>
+            </h2>
 
             <form onSubmit= {sortSwitcher}>
                 <label form="sort">Sort by:</label>
@@ -82,7 +87,7 @@ const Stats = ()=>{
                 </select>
                 <input type="submit" value={statSorter} onChange={(event)=>{setStatSorter(event.target.value)}} className='doesntmatter'/>
             </form>
-
+            
             <div className="pokeContainer">
             {sortedPokemon?
             sortedPokemon.map((pokemon)=>{

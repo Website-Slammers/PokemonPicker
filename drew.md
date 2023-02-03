@@ -12,8 +12,6 @@
 ## CSS Animations
 -Navbar (didn't work first time)
   -behave like picker buttons
--Page Titles (didn't work first time)
-  -move in from left
 
 
 # Notes:
@@ -28,4 +26,5 @@
 -Clean up HTML on Picker.js return statement
 -Added background image and gradient to main header
 -Added animations, pointer to Picker.js buttons
+-Added animations to page headers (moveInLeft)
 -Cleaned up style on About page

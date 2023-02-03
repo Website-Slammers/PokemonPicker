@@ -226,8 +226,10 @@ const Picker = () =>{
         
         <div>
             <header>
-                <h1 id="pokemonPicker">P i c k- a-
-              p o k e m o n !</h1>
+                <h2>
+                    <span className="header-page">
+                        P i c k- a- p o k e m o n !</span>
+                </h2>
             </header>
 
             <div id="left-and-right-container">

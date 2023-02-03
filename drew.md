@@ -7,13 +7,13 @@
 -
 
 ## CSS Styles
--Polish Pokemon info on picker.js
--Clean up About page
+-
 
 ## CSS Animations
--Navbar
--Page Titles
--Pick Boxes
+-Navbar (didn't work first time)
+  -behave like picker buttons
+-Page Titles (didn't work first time)
+  -move in from left
 
 
 # Notes:
@@ -22,8 +22,10 @@
 -Set Font Styles and Colors
 -Added Styled Header, Nav, Picker Boxes, About
 -Added Footer
+-Added About placeholder text
 
 ## 2/2/13
 -Clean up HTML on Picker.js return statement
 -Added background image and gradient to main header
--Added pointer to Picker.js buttons
+-Added animations, pointer to Picker.js buttons
+-Cleaned up style on About page

@@ -6,7 +6,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
 
 body{
-  color: pink;
+  color: #fff;
   background-color: #1e1e1e;
 }
 
@@ -24,6 +24,7 @@ body {
     rgba(57,107,186, 0.8)),
     url("https://i.imgur.com/Ohd8QYI.png");
   margin-bottom: 10px;
+  padding: 10px 0px;
 }
 
 header {
@@ -52,6 +53,7 @@ footer {
 /* FOOTER End */
 
 /* NavBar Start */
+/* navbar animations in Picker section */
 
 #nav-return {
   /* border: 5px solid red; */
@@ -78,11 +80,42 @@ nav a {
 
 /* Navbar End */
 
+/* Page Headers Start */
 
-h1{
+h2{
   display: flex;
   flex-wrap: center;
+  /* border: 5px solid red; */
+  display: flex;
+  justify-content: center;
 }
+
+.header-page {
+  font-size: 80px;
+  -webkit-text-stroke: 1px rgb(57, 107, 186);
+  -webkit-text-fill-color: rgb(255, 224, 49);
+  font-family: 'Faster One', cursive;
+  justify-content: center;
+  animation: moveInLeft 1s ease-out;
+}
+
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: -100px;
+  }
+
+  80% {
+    transform: 10px
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+/* Page Headers End */
 
 /* PICKER Start */
 
@@ -100,7 +133,7 @@ h1{
   background-image: url("https://i.pinimg.com/originals/2b/3b/04/2b3b04771ccca26c3dd96d781b0117ca.jpg");
   background: cover; 
   position: relative;
-  margin-top: 50px;
+  margin-top: 110px;
   cursor: pointer;
 }
 
@@ -145,34 +178,32 @@ h1{
 }
 
 .poke-button:link,
-.poke-button:visited {
+.poke-button:visited,
+.nav-title:link,
+.nav-title:visited {
   transition: all .2s;
   position: relative;
 }
 
-.poke-button:hover {
+.poke-button:hover,
+.nav-title:hover {
   transform: translateY(-3px);
   box-shadow: 0 10px 20px rgba(0,0,0,.2);
 }
 
-.poke-button:active {
+.poke-button:active,
+.nav-title:active {
   transform: translate(-1px);
   box-shadow: 0 5px 10px rgba(0,0,0,.2);
 }
 
 
 
+
+
 /* PICKER End */
 
 /* STATS Start */
-
-#stats-head, #pokemonPicker, #about-head {
-  font-size: 80px;
-  -webkit-text-stroke: 1px rgb(57, 107, 186);
-  -webkit-text-fill-color: rgb(255, 224, 49);
-  font-family: 'Faster One', cursive;
-  justify-content: center;
-}
 
 .pokeContainer{
   display:flex;
@@ -232,15 +263,22 @@ h1{
 #about-return {
   display: flex;
   flex-direction: column;
+  align-content: center;
+}
+
+.about-article-containerA {
+  display: flex;
+  justify-content: center;
 }
 
 #about-article-flexbox {
   /* border: 5px solid red; */
   display: flex;
   justify-content: center;
-  /* border: 5px solid yellow; */
+  border: 5px solid yellow;
   background-image: url("https://i.imgur.com/xZnBqaC.png");
   background-repeat: no-repeat;
+  border-radius: 3%;
   height: 725px;
   width: 600px;
 }

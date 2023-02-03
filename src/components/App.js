@@ -14,8 +14,9 @@ const App = () =>{
             <header className="header-main">
                 {/* <h1>Pokemon Picker!</h1> */}
                 <img id="head-img" src="https://i.imgur.com/xotOQCg.png"></img>
+                <Navbar />
             </header>
-            <Navbar />
+            
             <Outlet context={{
                 pokemonScalerObj: [pokemonScaler,setPokemonScaler]
             }}/>

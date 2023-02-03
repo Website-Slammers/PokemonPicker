@@ -144,6 +144,21 @@ h1{
   display: block;
 }
 
+.poke-button:link,
+.poke-button:visited {
+  transition: all .2s;
+  position: relative;
+}
+
+.poke-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0,0,0,.2);
+}
+
+.poke-button:active {
+  transform: translate(-1px);
+  box-shadow: 0 5px 10px rgba(0,0,0,.2);
+}
 
 
 

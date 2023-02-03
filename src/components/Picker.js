@@ -226,18 +226,24 @@ const Picker = () =>{
         
         <div>
             <header>
-                <h1 id="pokemonPicker">P i c k- a-
-              p o k e m o n !</h1>
+                <h2>
+                    <span className="header-page">
+                        P i c k- a- p o k e m o n !</span>
+                </h2>
             </header>
 
             <div id="left-and-right-container">
             {!Object.keys(pokemonDataLeft).length?<div>There's no data</div>:
                 <button onClick={pokemonPickerLeft} className="poke-button" id="poke-button-left">
-                    <div id="pokemon-left-name">{pokemonDataLeft.name}</div>
-                    <div className="pokemon-button-id">{pokemonDataLeft.id}</div>
-                    {
-                        Object.keys(pokemonDataLeft).length&&pokemonDataLeft.types.length?<div>{pokemonDataLeft.types[0].type.name}</div>:<div>whoops!</div>
-                    }
+                    <div className="btn-info-box btn-info-box-left">
+                        <span className="btn-name">{pokemonDataLeft.name}</span>
+                        <span className="btn-id">{pokemonDataLeft.id}</span>
+                        {
+                            Object.keys(pokemonDataLeft).length&&pokemonDataLeft.types.length?
+                            <span className="btn-type">{pokemonDataLeft.types[0].type.name}</span>:
+                            <span className="btn-type">whoops!</span>
+                        }
+                    </div>
                     {
                         Object.keys(pokemonDataLeft).length&&Object.keys(pokemonDataLeft.sprites).length?
                         <div id="pokemonLimg">
@@ -249,12 +255,16 @@ const Picker = () =>{
             }   
             {/* pokemon object two */}
             {!Object.keys(pokemonDataRight).length?<div>There's no data</div>:
-                <button onClick={pokemonPickerRight} className="pokeButton" id="poke-button-right">
-                    <div id="pokemonR">{pokemonDataRight.name}</div>
-                    <div >{pokemonDataRight.id}</div>
-                    {
-                        Object.keys(pokemonDataRight).length&&pokemonDataRight.types.length?<div>{pokemonDataRight.types[0].type.name}</div>:<div>whoops!</div>
-                    }
+                <button onClick={pokemonPickerRight} className="poke-button" id="poke-button-right">
+                    <div className="btn-info-box btn-info-box-right">
+                        <span className="btn-name">{pokemonDataRight.name}</span>
+                        <span className="btn-id">{pokemonDataRight.id}</span>
+                        {
+                            Object.keys(pokemonDataRight).length&&pokemonDataRight.types.length?
+                            <span className="btn-type">{pokemonDataRight.types[0].type.name}</span>:
+                            <span className="btn-type">whoops!</span>
+                        }
+                    </div>
                     {
                         Object.keys(pokemonDataRight).length&&Object.keys(pokemonDataRight.sprites).length?
                         <div id="pokemonRimg">

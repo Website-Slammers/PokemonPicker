@@ -53,7 +53,10 @@ const Stats = ()=>{
 //display pokemon in terms of who has won the most.
     return(
         <div>
-            <h1 id="stats-head">S t a t s</h1>
+            <h2 id="stats-head">
+                <span className="header-page">
+                    S t a t s</span>
+            </h2>
             
             <div className="pokeContainer">
             {sortedPokemon?

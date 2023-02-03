@@ -45,6 +45,7 @@ const Stats = ()=>{
         console.log(sortedArray);
         return sortedArray;
     }
+    
     const pokemonWinSorter =(array)=>{
         let sortedArray = array.sort((b, a) =>a[1].netScore - b[1].netScore);
         //wins //id number

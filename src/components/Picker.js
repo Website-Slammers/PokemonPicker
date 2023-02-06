@@ -34,7 +34,7 @@ const Picker = () =>{
             console.log(pokeData);
             return pokeData;
         }catch(error){
-            console.log("your fetch has failed, bitch")
+            console.log("your fetch has failed, bitch");
         }
     }
 

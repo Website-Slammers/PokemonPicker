@@ -3,10 +3,15 @@ import {useOutletContext} from "react-router-dom";
 
 
 const Stats = ()=>{
+    let cumstain = "penis"
     const {pokemonScalerObj: [pokemonScaler,setPokemonScaler]} = useOutletContext();
     const [sortedPokemon, setSortedPokemon] = useState([]);
     const [statSorter, setStatSorter] = useState("wins");
+    const [pokemonTypes, setPokemonTypes] = useState();
     let pokemonArray = [];
+    let pokemonTypesArray =['bug','dark','dragon','electric','fairy','fighting','fire',
+    'flying','ghost','grass','ground','ice','normal','poison','psychic','rock','steel','water']
+
 
     useEffect(()=>{
         if(localStorage.getItem("pokemonObj")){
@@ -28,27 +33,15 @@ const Stats = ()=>{
             pokemonArray = Object.entries(pokemonObj);
         sortSwitcher(statSorter, pokemonArray)
     },[statSorter])
-
-    const pokemonTypeSorter = (array,searchTypes)=>{
-        let filteredArray = []
-        for(let i=0;i<searchTypes.length;i++){
-            filteredArray = array.filter((pokemon) =>{
-                if(pokemon[1].types[1]){
-                    if(searchTypes[i] == pokemon[1].types[0].type.name || searchTypes[i] == pokemon[1].types[1].type.name){
-                        return pokemon;
-                    }
-                }else if(searchTypes[i] == pokemon[1].types[0].type.name)
-                    {
-                        console.log("here " , pokemon)
-                        return pokemon;
-                    }
-            })
-        }
-        filteredArray = pokemonWinSorter(filteredArray);
-        console.log("wtf", filteredArray);
-        return filteredArray;
-    }
     
+    useEffect(()=>{
+        const {pokemonObj} = JSON.parse(localStorage.getItem("pokemonObj"))
+            setPokemonScaler(pokemonObj);
+            pokemonArray = Object.entries(pokemonObj);
+        pokemonTypeSorter(pokemonArray);
+    },[pokemonTypes])
+
+
     const pokemonIdSorter = (array)=>{
         console.log(array);
         let sortedArray = array.sort((a,b)=>a[1].id - b[1].id);
@@ -62,13 +55,36 @@ const Stats = ()=>{
         return sortedArray
     }
 
+    const pokemonTypeSorter = (array)=>{
+        let filteredArray = []
+        let searchTypes = pokemonTypesArray; //filter out all types that are in the useState.
+        
+        console.log(searchTypes);
+        for(let i=0;i<searchTypes.length;i++){
+            filteredArray = array.filter((pokemon) =>{
+                if(pokemon[1].types[1]){
+                    
+                    if(searchTypes[i][1] == true){
+                    if(searchTypes[i][0] == pokemon[1].types[0].type.name || searchTypes[i][0] == pokemon[1].types[1].type.name){
+                        return pokemon;
+                    }
+                }else if(searchTypes[i][0] == pokemon[1].types[0].type.name)
+                    {
+                        return pokemon;
+                    }
+                }
+            })
+        }
+        filteredArray = pokemonWinSorter(filteredArray);
+        console.log("wtf", filteredArray);
+        return filteredArray;
+    }
+
     function sortSwitcher(statSorter, pokemonArray){
         switch(statSorter){
             case 'wins': setSortedPokemon(pokemonWinSorter(pokemonArray))
                 break;
             case 'id': setSortedPokemon(pokemonIdSorter(pokemonArray))
-                break;
-            case 'type': setSortedPokemon(pokemonTypeSorter(pokemonArray, ['fire']))
                 break;
             default: setSortedPokemon(pokemonWinSorter(pokemonArray))
                 break;  
@@ -76,11 +92,31 @@ const Stats = ()=>{
         console.log(sortedPokemon)
     
     }
+
+    //if the type is in the Usestate, filter it out of the array.
+    const elementFlip=(event,element)=>{
+        let tempTypes =pokemonTypes;
+        
+        if(tempTypes.length){
+            let inType = false;
+            tempTypes.map((type, index)=>{
+                if(type === element){
+                    inType = true;
+                    return 
+                }else {
+                    return element;
+                }
+            })
+            if (inType == false){
+                tempTypes.push(element)
+            }
+        }
+        setPokemonTypes(tempTypes);
+        console.log("hello ", pokemonTypesArray)
+    }
 //display pokemon in terms of who has won the most.
     return(
         <div>
-            
-
             <h2 id="stats-head">
                 <span className="header-page">
                     S t a t s</span>
@@ -90,9 +126,18 @@ const Stats = ()=>{
             <select name="sort" id="sort" value={statSorter} onChange={(event)=>{setStatSorter(event.target.value), console.log(event.target.value)}} >
                 <option value="wins">Wins</option>
                 <option value="id">Number</option>
-                <option value="type">Type</option>
             </select>
 
+            {
+            pokemonTypesArray?pokemonTypesArray.map((element,index)=>{
+                
+                return(
+                    <button style={{brightness:100}}  onClick={(event)=>{elementFlip(element)}}
+                    id={element}> {element}</button>
+                )})
+                :<div>types failed to load</div>
+            }
+            
             <div className="pokeContainer">
             {sortedPokemon?
             sortedPokemon.map((pokemon)=>{

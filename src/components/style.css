@@ -28,6 +28,13 @@ body {
   padding: 10px 0px;
 }
 
+@media (max-width: 1017px) {
+  h2 {
+    flex-direction: column;
+  }
+}
+
+
 #head-img {
   width: 70%;
 }
@@ -67,7 +74,7 @@ footer {
 }
 
 #nav-main {
-  width: 600px;
+  width: 700px;
   /* border: 3px solid white; */
   text-align: center;
 }
@@ -78,13 +85,22 @@ nav a {
 
 .nav-title {
   font-family: 'Swagger', sans-serif;
-
   margin: 0px 22px;
 }
 
-@media (max-width:800px) {
-  .nav-title img {
-    height: 70%;
+.nav-img {
+  height: 62px;
+}
+
+@media (min-width: 1px) {
+  .nav-img {
+    height: 31px;
+  }
+}
+
+@media (min-width: 780px) {
+  .nav-img {
+    height: 100%;
   }
 }
 
@@ -99,6 +115,7 @@ h2{
   /* border: 5px solid red; */
   display: flex;
   justify-content: center;
+
 }
 
 .header-page {
@@ -108,6 +125,12 @@ h2{
   font-family: 'Faster One', cursive;
   justify-content: center;
   animation: moveInLeft 1s ease-out;
+}
+
+@media (max-width: 800px) {
+  .header-page {
+    font-size: 40px;
+  }
 }
 
 @keyframes moveInLeft {
@@ -134,6 +157,7 @@ h2{
   display: flex;
   justify-content: center;
   gap: 40px;
+  width: 100%;
 }
 
 #poke-button-left, #poke-button-right {
@@ -153,14 +177,31 @@ h2{
   /* see styles above */
 }
 
+@media (max-width: 780px) {
+  #poke-button-left,
+  #poke-button-right {
+    border: 10px solid yellow;
+    width: 20rem;
+    height: 20rem;
+  }
+}
+
+@media (max-width: 680px) {
+  #poke-button-left,
+  #poke-button-right {
+    width: 15rem;
+    height: 15rem;
+  }
+}
+
 .btn-info-box {
-  background-color: white;
+  /* background-color: white; */
   position: absolute;
   top: -12%;
   left: 50%;
   transform: translate(-50%, -50%);
-  padding: 8px 228px;
-  border-radius: 100px;
+  /* padding: 8px 228px; */
+  /* border-radius: 100px; */
   box-sizing: border-box;
 }
 
@@ -189,28 +230,49 @@ h2{
 }
 
 .poke-button:link,
-.poke-button:visited,
-.nav-title:link,
-.nav-title:visited {
+.poke-button:visited {
   transition: all .2s;
   position: relative;
 }
 
-.poke-button:hover,
-.nav-title:hover {
+.poke-button:hover {
   transform: translateY(-3px);
   box-shadow: 0 10px 20px rgba(0,0,0,.2);
 }
 
-.poke-button:active,
-.nav-title:active {
+.poke-button:active {
   transform: translate(-1px);
   box-shadow: 0 5px 10px rgba(0,0,0,.2);
 }
 
+/* pokeImg */
+#pokemonLimg {
+  width: 100%;
+  height: 100%;
+}
 
+#pokemonLimg img {
+  width: 100%;
+  height: 100%;
+}
 
+#pokemonRimg {
+  width: 100%;
+  height: 100%;
+}
 
+#pokemonRimg  img {
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-width: 500px) {
+  #pokemonLimg,
+  #pokemonRimg {
+    width: 10rem;
+    height: 10rem;
+  }
+}
 
 /* PICKER End */
 
@@ -302,3 +364,4 @@ h2{
 }
 
 /* ABOUT End */
+

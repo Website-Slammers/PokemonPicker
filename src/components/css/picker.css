@@ -1,0 +1,151 @@
+/* PICKER Start */
+
+#left-and-right-container {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  width: 100%;
+}
+
+#poke-button-left, #poke-button-right {
+  border: 10px solid blue;
+  border-radius: 20%;
+  display: flex;
+  flex-direction: column;
+  background-image: url("https://i.pinimg.com/originals/2b/3b/04/2b3b04771ccca26c3dd96d781b0117ca.jpg");
+  background: cover; 
+  position: relative;
+  margin-top: 110px;
+  cursor: pointer;
+}
+
+#poke-button-right {
+  border: 10px solid red;
+  /* see styles above */
+}
+
+/* @media (max-width: 460px) {
+  #poke-button-left,
+  #poke-button-right,
+  #poke-button-left img,
+  #poke-button-right img {
+    width: 5px;
+    border: 4px solid yellow;
+  }
+} */
+
+@media (max-width: 780px) {
+  #poke-button-left,
+  #poke-button-right {
+    width: 20rem;
+    height: 20rem;
+  }
+}
+
+@media (max-width: 680px) {
+  #poke-button-left,
+  #poke-button-right {
+    width: 15rem;
+    height: 15rem;
+  }
+}
+
+.btn-info-box {
+  /* background-color: white; */
+  position: absolute;
+  top: -12%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* padding: 8px 228px; */
+  /* border-radius: 100px; */
+  box-sizing: border-box;
+}
+
+.btn-info-box-left {
+  /* border: 5px solid blue; */
+  color: white;
+  font-family: 'Swagger', sans-serif;
+  font-size: 2.5rem;
+}
+
+.btn-info-box-right {
+  /* border: 5px solid red; */
+  color: white;
+  font-family: 'Swagger', sans-serif;
+  font-size: 2.5rem;
+}
+
+@media (min-width: 1px) {
+  .btn-info-box-left,
+  .btn-info-box-right {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 700px) {
+  .btn-info-box-left,
+  .btn-info-box-right {
+    font-size: 1.5rem;
+  }
+}
+
+.btn-name {
+  display: inline-block;
+  text-transform: capitalize;
+  margin-right: 5px;
+}
+
+.btn-id {
+  display: inline-block;
+}
+
+.btn-type {
+  display: block;
+}
+
+.poke-button:link,
+.poke-button:visited {
+  transition: all .2s;
+  position: relative;
+}
+
+.poke-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0,0,0,.2);
+}
+
+.poke-button:active {
+  transform: translate(-1px);
+  box-shadow: 0 5px 10px rgba(0,0,0,.2);
+}
+
+/* pokeImg */
+#pokemonLimg {
+  width: 100%;
+  height: 100%;
+}
+
+#pokemonLimg img {
+  width: 100%;
+  height: 100%;
+}
+
+#pokemonRimg {
+  width: 100%;
+  height: 100%;
+}
+
+#pokemonRimg  img {
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-width: 500px) {
+  #pokemonLimg,
+  #pokemonRimg {
+    width: 10rem;
+    height: 10rem;
+  }
+}
+
+/* PICKER End */

@@ -8,6 +8,7 @@ import ErrorPage from "./components/ErrorPage";
 import Home from "./components/Home";
 import Picker from "./components/Picker";
 import Stats from "./components/Stats";
+import Who from "./components/Who";
 
 //Create root and connect to HTML 
 const appElement = document.getElementById('app');
@@ -34,7 +35,12 @@ export const router = createBrowserRouter([
         {
             path:"stats",
             element:<Stats/>
-        }]
+        },
+        {
+            path:"who",
+            element:<Who/>
+        }
+    ]
     }])
     
 

@@ -3,8 +3,7 @@ import {useOutletContext} from "react-router-dom";
 
 
 const Stats = ()=>{
-    let cumstain = "penis"
-    const {pokemonScalerObj: [pokemonScaler,setPokemonScaler]} = useOutletContext();
+    const {pokemonScalerObj: [pokemonScaler,setPokemonScaler]} = useOutletContext(); 
     const [sortedPokemon, setSortedPokemon] = useState([]);
     const [statSorter, setStatSorter] = useState("wins");
     const [cutPokemonTypes, setCutPokemonTypes] = useState([]);
@@ -27,11 +26,13 @@ const Stats = ()=>{
     },[])
 
     useEffect(()=>{
-        // pokemonArray = pokemonTypeSorter(pokemonArray, ["fire"])
-        const {pokemonObj} = JSON.parse(localStorage.getItem("pokemonObj"))
-            setPokemonScaler(pokemonObj);
-            pokemonArray = Object.entries(pokemonObj);
-        sortSwitcher(statSorter, pokemonArray)
+        
+        if(localStorage.getItem("pokemonObj")){
+            const {pokemonObj} = JSON.parse(localStorage.getItem("pokemonObj"))
+                setPokemonScaler(pokemonObj);
+                pokemonArray = Object.entries(pokemonObj);
+            sortSwitcher(statSorter, pokemonArray)
+        }
     },[statSorter])
     
 
@@ -103,10 +104,12 @@ const Stats = ()=>{
     }
 
     useEffect (()=>{
-        const {pokemonObj} = JSON.parse(localStorage.getItem("pokemonObj"))
-            setPokemonScaler(pokemonObj);
-            pokemonArray = Object.entries(pokemonObj)
-        pokemonTypeSorter(pokemonArray);
+        if(localStorage.getItem("pokemonObj")){
+            const {pokemonObj} = JSON.parse(localStorage.getItem("pokemonObj"))
+                setPokemonScaler(pokemonObj);
+                pokemonArray = Object.entries(pokemonObj)
+            pokemonTypeSorter(pokemonArray);
+        }
     },[cutPokemonTypes])
 
 //display pokemon in terms of who has won the most.

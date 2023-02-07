@@ -28,6 +28,10 @@ body {
   padding: 10px 0px;
 }
 
+#head-img {
+  width: 70%;
+}
+
 header {
   text-align: center;
 }
@@ -74,10 +78,16 @@ nav a {
 
 .nav-title {
   font-family: 'Swagger', sans-serif;
-  /* padding: 0px 10px; */
-  /* border: 3px solid blue; */
+
   margin: 0px 22px;
 }
+
+@media (max-width:800px) {
+  .nav-title img {
+    height: 70%;
+  }
+}
+
 
 /* Navbar End */
 

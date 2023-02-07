@@ -27,11 +27,13 @@ const Stats = ()=>{
     },[])
 
     useEffect(()=>{
-        // pokemonArray = pokemonTypeSorter(pokemonArray, ["fire"])
-        const {pokemonObj} = JSON.parse(localStorage.getItem("pokemonObj"))
-            setPokemonScaler(pokemonObj);
-            pokemonArray = Object.entries(pokemonObj);
-        sortSwitcher(statSorter, pokemonArray)
+        
+        if(localStorage.getItem("pokemonObj")){
+            const {pokemonObj} = JSON.parse(localStorage.getItem("pokemonObj"))
+                setPokemonScaler(pokemonObj);
+                pokemonArray = Object.entries(pokemonObj);
+            sortSwitcher(statSorter, pokemonArray)
+        }
     },[statSorter])
     
 
@@ -103,10 +105,12 @@ const Stats = ()=>{
     }
 
     useEffect (()=>{
-        const {pokemonObj} = JSON.parse(localStorage.getItem("pokemonObj"))
-            setPokemonScaler(pokemonObj);
-            pokemonArray = Object.entries(pokemonObj)
-        pokemonTypeSorter(pokemonArray);
+        if(localStorage.getItem("pokemonObj")){
+            const {pokemonObj} = JSON.parse(localStorage.getItem("pokemonObj"))
+                setPokemonScaler(pokemonObj);
+                pokemonArray = Object.entries(pokemonObj)
+            pokemonTypeSorter(pokemonArray);
+        }
     },[cutPokemonTypes])
 
 //display pokemon in terms of who has won the most.

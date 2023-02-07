@@ -12,7 +12,7 @@ const Picker = () =>{
 
     //assigns two pokemon id's guarunteeing that they are not the same.
     const pokemonIdAssigner = (sameNumber) => {
-        let newPokemon =  Math.ceil(Math.random()*1008)
+        let newPokemon =  Math.ceil(Math.random()*151)
         if(newPokemon == sameNumber)
         {
             console.log("FORBIDDEN NUMBER");

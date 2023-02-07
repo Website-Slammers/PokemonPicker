@@ -7,9 +7,9 @@ const Stats = ()=>{
     const {pokemonScalerObj: [pokemonScaler,setPokemonScaler]} = useOutletContext();
     const [sortedPokemon, setSortedPokemon] = useState([]);
     const [statSorter, setStatSorter] = useState("wins");
-    const [pokemonTypes, setPokemonTypes] = useState();
+    const [cutPokemonTypes, setCutPokemonTypes] = useState([]);
     let pokemonArray = [];
-    let pokemonTypesArray =['bug','dark','dragon','electric','fairy','fighting','fire',
+    let pokemonTypesArray = ['bug','dark','dragon','electric','fairy','fighting','fire',
     'flying','ghost','grass','ground','ice','normal','poison','psychic','rock','steel','water']
 
 
@@ -19,7 +19,7 @@ const Stats = ()=>{
             setPokemonScaler(pokemonObj);
             pokemonArray = Object.entries(pokemonObj);
             // pokemonArray = pokemonTypeSorter(pokemonArray, ["fire"])
-            console.log(pokemonArray);
+            // console.log(pokemonArray);
             pokemonArray = pokemonWinSorter(pokemonArray);
         }
         setSortedPokemon(pokemonArray);
@@ -34,18 +34,11 @@ const Stats = ()=>{
         sortSwitcher(statSorter, pokemonArray)
     },[statSorter])
     
-    useEffect(()=>{
-        const {pokemonObj} = JSON.parse(localStorage.getItem("pokemonObj"))
-            setPokemonScaler(pokemonObj);
-            pokemonArray = Object.entries(pokemonObj);
-        pokemonTypeSorter(pokemonArray);
-    },[pokemonTypes])
-
 
     const pokemonIdSorter = (array)=>{
-        console.log(array);
+        // console.log(array);
         let sortedArray = array.sort((a,b)=>a[1].id - b[1].id);
-        console.log(sortedArray);
+        // console.log(sortedArray);
         return sortedArray;
     }
     
@@ -57,27 +50,22 @@ const Stats = ()=>{
 
     const pokemonTypeSorter = (array)=>{
         let filteredArray = []
-        let searchTypes = pokemonTypesArray; //filter out all types that are in the useState.
-        
-        console.log(searchTypes);
-        for(let i=0;i<searchTypes.length;i++){
-            filteredArray = array.filter((pokemon) =>{
-                if(pokemon[1].types[1]){
-                    
-                    if(searchTypes[i][1] == true){
-                    if(searchTypes[i][0] == pokemon[1].types[0].type.name || searchTypes[i][0] == pokemon[1].types[1].type.name){
-                        return pokemon;
-                    }
-                }else if(searchTypes[i][0] == pokemon[1].types[0].type.name)
-                    {
-                        return pokemon;
-                    }
+        let searchTypes = pokemonTypesArray;
+        searchTypes = pokemonTypesArray.filter(type => !cutPokemonTypes.includes(type))
+        // console.log(array);
+        filteredArray = array.filter((pokemon=>{
+            if(pokemon[1].types[1]){
+                if(searchTypes.includes(pokemon[1].types[0].type.name) || searchTypes.includes(pokemon[1].types[1].type.name)){
+                    return pokemon; 
+            }}else if(searchTypes.includes(pokemon[1].types[0].type.name))
+                {
+                    return pokemon;
                 }
-            })
-        }
+        }))
+        console.log("filtered ", filteredArray);
         filteredArray = pokemonWinSorter(filteredArray);
-        console.log("wtf", filteredArray);
-        return filteredArray;
+        // console.log("wtf", filteredArray);
+        setSortedPokemon(pokemonWinSorter(filteredArray));
     }
 
     function sortSwitcher(statSorter, pokemonArray){
@@ -89,31 +77,38 @@ const Stats = ()=>{
             default: setSortedPokemon(pokemonWinSorter(pokemonArray))
                 break;  
     }
-        console.log(sortedPokemon)
+        // console.log(sortedPokemon)
     
     }
 
+    
     //if the type is in the Usestate, filter it out of the array.
-    const elementFlip=(event,element)=>{
-        let tempTypes =pokemonTypes;
-        
-        if(tempTypes.length){
-            let inType = false;
-            tempTypes.map((type, index)=>{
-                if(type === element){
-                    inType = true;
-                    return 
-                }else {
-                    return element;
-                }
+    const elementFlip=(event, element)=>{
+        let tempTypes = [...cutPokemonTypes];
+        let toggle = false;
+
+        console.log(element);
+        tempTypes.map((type)=>{
+            if(type == element) toggle = true;
+        })
+        if(toggle == false){
+            tempTypes.push(element)
+        }else if(toggle == true){
+            tempTypes = tempTypes.filter(function(type){
+                if(type !== element) return type;
             })
-            if (inType == false){
-                tempTypes.push(element)
-            }
         }
-        setPokemonTypes(tempTypes);
-        console.log("hello ", pokemonTypesArray)
+        console.log("tempTypes " , tempTypes);
+        setCutPokemonTypes(tempTypes);
     }
+
+    useEffect (()=>{
+        const {pokemonObj} = JSON.parse(localStorage.getItem("pokemonObj"))
+            setPokemonScaler(pokemonObj);
+            pokemonArray = Object.entries(pokemonObj)
+        pokemonTypeSorter(pokemonArray);
+    },[cutPokemonTypes])
+
 //display pokemon in terms of who has won the most.
     return(
         <div>
@@ -132,7 +127,7 @@ const Stats = ()=>{
             pokemonTypesArray?pokemonTypesArray.map((element,index)=>{
                 
                 return(
-                    <button style={{brightness:100}}  onClick={(event)=>{elementFlip(element)}}
+                    <button onClick={(event)=>{elementFlip(event, element)}}
                     id={element}> {element}</button>
                 )})
                 :<div>types failed to load</div>

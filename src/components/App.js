@@ -2,9 +2,16 @@ import React, {useState, useEffect} from "react";
 import Navbar from "./Navbar";
 import { Outlet } from 'react-router-dom';
 
-import './pokeball.js'
-import './style.css'
-import './animations.css'
+import './css/pokeball.js'
+import './css/pokeball.css'
+
+import './css/imports.css'
+
+import './css/app.css'
+import './css/header.css'
+import './css/picker.css'
+import './css/stats.css'
+import './css/about.css'
 
 const App = () =>{
     const [pokemonScaler, setPokemonScaler] = useState({});

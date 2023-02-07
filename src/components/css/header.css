@@ -1,0 +1,126 @@
+/* Header-Main, Navbar, and Page Headers */
+
+
+/* HEADER Start */
+
+.header-main {
+  text-align: center;
+  /* border: 5px solid red; */
+  background-image: linear-gradient(
+    to right bottom,
+    rgba(57,107,186, 0.8),
+    rgba(225,224,49, 0.8),
+    rgba(57,107,186, 0.8)),
+    url("https://i.imgur.com/Ohd8QYI.png");
+  margin-bottom: 10px;
+  padding: 10px 0px;
+}
+
+@media (max-width: 1017px) {
+  h2 {
+    flex-direction: column;
+  }
+}
+
+
+#head-img {
+  width: 70%;
+}
+
+header {
+  text-align: center;
+}
+
+/* HEADER End */
+
+/* NavBar Start */
+
+#nav-return {
+  /* border: 5px solid red; */
+  display: flex;
+  justify-content: center;
+}
+
+#nav-main {
+  width: 700px;
+  /* border: 3px solid white; */
+  text-align: center;
+}
+
+nav a {
+  text-decoration: none;
+}
+
+.nav-title {
+  font-family: 'Swagger', sans-serif;
+  margin: 0px 22px;
+}
+
+.nav-img {
+  height: 62px;
+}
+
+@media (min-width: 1px) {
+  .nav-img {
+    height: 25px;
+  }
+}
+
+@media (min-width: 460px) {
+  .nav-img {
+    height: 31px
+  }
+}
+
+@media (min-width: 780px) {
+  .nav-img {
+    height: 100%;
+  }
+}
+
+
+/* Navbar End */
+
+/* Page Headers Start */
+
+h2{
+  display: flex;
+  flex-wrap: center;
+  /* border: 5px solid red; */
+  display: flex;
+  justify-content: center;
+
+}
+
+.header-page {
+  font-size: 80px;
+  -webkit-text-stroke: 1px rgb(57, 107, 186);
+  -webkit-text-fill-color: rgb(255, 224, 49);
+  font-family: 'Faster One', cursive;
+  justify-content: center;
+  animation: moveInLeft 1s ease-out;
+}
+
+@media (max-width: 800px) {
+  .header-page {
+    font-size: 40px;
+  }
+}
+
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+
+  80% {
+    transform: translateX(10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+/* Page Headers End */

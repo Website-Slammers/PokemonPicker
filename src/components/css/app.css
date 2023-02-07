@@ -1,0 +1,28 @@
+/* * */
+
+body{
+  color: #fff;
+  background-color: #1e1e1e;
+  padding: 20px;
+}
+
+/* FOOTER Start */
+
+footer {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.tech-lang {
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+#ian-font {
+  font-family: 'Share Tech Mono', monospace;
+}
+
+#drew-font {
+  font-family: 'Berkshire Swash', cursive;
+}
+
+/* FOOTER End */

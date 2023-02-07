@@ -1,7 +1,6 @@
 import React, { useEffect,useState } from "react";
 import {useOutletContext} from "react-router-dom";
 
-
 const Stats = ()=>{
     const {pokemonScalerObj: [pokemonScaler,setPokemonScaler]} = useOutletContext(); 
     const [sortedPokemon, setSortedPokemon] = useState([]);

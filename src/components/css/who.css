@@ -1,16 +1,15 @@
 
 .who-return{
-    display:flex;
-    border: 5px solid red;
+    height: 100vh;
 }
 
 .who-img-container{
-    /* display:flex;
-    align-content:center;
-    background-color:#67c5e1;
-    width:70vw;
-    height:80rem; */
-    background-image: url("https://i.imgur.com/rqos3AI.png")
+    position: relative;
+}
+
+.who-img--background {
+    position:absolute;
+    width: 100%;
 }
 
 .who-img{
@@ -18,6 +17,11 @@
     filter: grayscale(100%) brightness(0);
     opacity: 1;
     padding:30px;
+    width: 40%;
+    position: absolute;
+    left: 27.5%;
+    top: 90%;
+    transform: translate(-50%, 5%)
 }
 
 

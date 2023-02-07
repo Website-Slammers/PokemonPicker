@@ -33,6 +33,7 @@ const Who = () =>{
             Object.keys(whoPokemon).length&&Object.keys(whoPokemon.sprites).length?
 
             <div className ="who-img-container">
+                <img className="who-img--background" src="https://i.imgur.com/rqos3AI.png" />
                 <img className="who-img" src={whoPokemon.sprites.other['official-artwork'].front_default}/>
             </div>:
             <p>who-img--err....</p>

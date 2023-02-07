@@ -28,11 +28,14 @@ const Who = () =>{
         <div>
 
         <h2>WHO'S THAT FAT DUMPSTER ASS POKEMON?!</h2>
-        {!Object.keys(whoPokemon).length?<div>there's no data</div>:
+
+        {!Object.keys(whoPokemon).length?<p>fetch failed</p>:
             Object.keys(whoPokemon).length&&Object.keys(whoPokemon.sprites).length?
-            <div id="pokemonRimg">
-                <img src={whoPokemon.sprites.other['official-artwork'].front_default}/>
-            </div>:<div>loading pokermans....</div>
+
+            <div className ="who-img-container">
+                <img className="who-img" src={whoPokemon.sprites.other['official-artwork'].front_default}/>
+            </div>:
+            <p>who-img--err....</p>
         }
         </div>
     )

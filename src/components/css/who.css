@@ -1,15 +1,16 @@
 
 .who-return{
     display:flex;
-    
+    border: 5px solid red;
 }
 
 .who-img-container{
-    display:flex;
+    /* display:flex;
     align-content:center;
     background-color:#67c5e1;
     width:70vw;
-    height:80rem;
+    height:80rem; */
+    background-image: url("https://i.imgur.com/rqos3AI.png")
 }
 
 .who-img{

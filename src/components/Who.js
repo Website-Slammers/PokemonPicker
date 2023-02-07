@@ -1,7 +1,6 @@
 import {useEffect, useState}from 'react';
 import { fetchPokemonData } from '../api/pokemonFetch';
 
-
 const Who = () =>{
     const [whoPokemon, setWhoPokemon] = useState({});
     const [toggle, setToggle ] = useState(false)

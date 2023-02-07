@@ -12,6 +12,7 @@ import './css/header.css'
 import './css/picker.css'
 import './css/stats.css'
 import './css/about.css'
+import './css/who.css'
 
 const App = () =>{
     const [pokemonScaler, setPokemonScaler] = useState({});

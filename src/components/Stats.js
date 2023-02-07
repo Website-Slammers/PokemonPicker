@@ -3,8 +3,7 @@ import {useOutletContext} from "react-router-dom";
 
 
 const Stats = ()=>{
-    let cumstain = "penis"
-    const {pokemonScalerObj: [pokemonScaler,setPokemonScaler]} = useOutletContext();
+    const {pokemonScalerObj: [pokemonScaler,setPokemonScaler]} = useOutletContext(); 
     const [sortedPokemon, setSortedPokemon] = useState([]);
     const [statSorter, setStatSorter] = useState("wins");
     const [cutPokemonTypes, setCutPokemonTypes] = useState([]);

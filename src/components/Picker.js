@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import {useOutletContext} from "react-router-dom";
 import tokenMaker from "./tokenMaker";
+import { fetchPokemonData } from "../api/pokemonFetch";
 
 const Picker = () =>{
     const [pokemonDataLeft, setPokemonDataLeft] = useState({})
@@ -21,22 +22,7 @@ const Picker = () =>{
         return newPokemon
     }
 
-    //acquires pokemon data by ID
-    async function fetchPokemonData(id){
-        try{
-            const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`,
-            {
-                headers:{
-                    'Content-Type':'application/json'
-                },
-            })
-            let pokeData = await response.json();
-            console.log(pokeData);
-            return pokeData;
-        }catch(error){
-            console.log("your fetch has failed, bitch");
-        }
-    }
+    
 
     //refreshes pokemon calls when used. and stuff
     async function newPokemon(){

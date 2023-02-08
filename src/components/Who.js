@@ -25,7 +25,7 @@ const Who = () =>{
     },[pokemonId])
 
     return(
-        <div>
+        <div className = "who-return">
 
         <h2>WHO'S THAT FAT DUMPSTER ASS POKEMON?!</h2>
 

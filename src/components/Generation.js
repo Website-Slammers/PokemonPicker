@@ -1,6 +1,9 @@
 import {react} from 'react'
 
 const Generation =()=>{
+    
+
+
     return(
         <div>
             

@@ -1,5 +1,6 @@
 import React, { useEffect,useState } from "react";
 import {useOutletContext} from "react-router-dom";
+import Generation from "./Generation";
 
 const Stats = ()=>{
     const {pokemonScalerObj: [pokemonScaler,setPokemonScaler]} = useOutletContext(); 
@@ -62,7 +63,7 @@ const Stats = ()=>{
                     return pokemon;
                 }
         }))
-        console.log("filtered ", filteredArray);
+        // console.log("filtered ", filteredArray);
         filteredArray = pokemonWinSorter(filteredArray);
         // console.log("wtf", filteredArray);
         setSortedPokemon(pokemonWinSorter(filteredArray));
@@ -135,6 +136,9 @@ const Stats = ()=>{
                 :<div>types failed to load</div>
             }
             
+            {
+                <Generation />
+            }
             <div className="pokeContainer">
             {sortedPokemon?
             sortedPokemon.map((pokemon)=>{

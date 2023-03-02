@@ -1,6 +1,8 @@
 import {useEffect, useState}from 'react';
 import { fetchPokemonData } from '../api/pokemonFetch';
 
+import Header from './Header'
+
 const Who = () =>{
     const [whoPokemon, setWhoPokemon] = useState({});
     const [toggle, setToggle ] = useState(false)
@@ -27,17 +29,19 @@ const Who = () =>{
     return(
         <div className = "who-return">
 
-        <h2>WHO'S THAT FAT DUMPSTER ASS POKEMON?!</h2>
+            <Header />
 
-        {!Object.keys(whoPokemon).length?<p>fetch failed</p>:
-            Object.keys(whoPokemon).length&&Object.keys(whoPokemon.sprites).length?
+            <h2>WHO'S THAT FAT DUMPSTER ASS POKEMON?!</h2>
 
-            <div className ="who-img-container">
-                <img className="who-img--background" src="https://i.imgur.com/rqos3AI.png" />
-                <img className="who-img" src={whoPokemon.sprites.other['official-artwork'].front_default}/>
-            </div>:
-            <p>who-img--err....</p>
-        }
+            {!Object.keys(whoPokemon).length?<p>fetch failed</p>:
+                Object.keys(whoPokemon).length&&Object.keys(whoPokemon.sprites).length?
+
+                <div className ="who-img-container">
+                    <img className="who-img--background" src="https://i.imgur.com/rqos3AI.png" />
+                    <img className="who-img" src={whoPokemon.sprites.other['official-artwork'].front_default}/>
+                </div>:
+                <p>who-img--err....</p>
+            }
         </div>
     )
 }

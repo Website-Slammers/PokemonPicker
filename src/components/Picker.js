@@ -3,6 +3,8 @@ import {useOutletContext} from "react-router-dom";
 import tokenMaker from "./tokenMaker";
 import { fetchPokemonData } from "../api/pokemonFetch";
 
+import Header from './Header'
+
 const Picker = () =>{
     const [pokemonDataLeft, setPokemonDataLeft] = useState({})
     const [pokemonDataRight, setPokemonDataRight] = useState({});
@@ -211,12 +213,7 @@ const Picker = () =>{
     return(
         
         <div>
-            <header>
-                <h2>
-                    <span className="header-page header-page--block">
-                        P i c k- a- </span><span className="header-page header-page--block">p o k e m o n !</span>
-                </h2>
-            </header>
+            <Header />
 
             <div id="left-and-right-container">
             {!Object.keys(pokemonDataLeft).length?<div>There's no data</div>:

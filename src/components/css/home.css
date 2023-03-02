@@ -1,0 +1,44 @@
+.home {
+  height: 95svh;
+  background-image: linear-gradient(
+    to right bottom,
+    rgba(57,107,186, 0.8),
+    rgba(225,224,49, 0.8),
+    rgba(57,107,186, 0.8)),
+    url("https://i.imgur.com/Ohd8QYI.png");
+  margin-bottom: 10px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.home-title {
+  animation: spinner 2s;
+}
+
+.home-button {
+  font-size: 40px;
+  font-weight: bold;
+  color: white;
+  display: inline-block;
+  text-decoration: none;
+  margin: 2rem;
+  font-family: 'Faster One', cursive;
+  -webkit-text-stroke: 1px rgb(57, 107, 186);
+  -webkit-text-fill-color: rgb(255, 224, 49);
+  animation: moveInLeft 1s ease-out;
+  animation-fill-mode: backwards;
+  animation-delay: 2s;
+}
+
+@keyframes spinner {
+  from {
+    transform: rotate(0turn) scale(.1)
+  }
+
+  to {
+    transform: rotate(2turn) scale(1)
+  }
+}

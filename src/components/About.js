@@ -1,13 +1,14 @@
 import React from "react";
+
+import Header from './Header'
+
 const About = ()=>{
     
 
     return(
         <div id="about-return">
-            <h2>
-                <span className="header-page">
-                    O u r - S t o r y</span>
-            </h2>
+            <Header />
+            
             <div className="about-article-containerA">
                 <div id="about-article-flexbox">
                     <article>

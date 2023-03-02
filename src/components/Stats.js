@@ -1,6 +1,8 @@
 import React, { useEffect,useState } from "react";
 import {useOutletContext} from "react-router-dom";
 
+import Header from './Header'
+
 const Stats = ()=>{
     const {pokemonScalerObj: [pokemonScaler,setPokemonScaler]} = useOutletContext(); 
     const [sortedPokemon, setSortedPokemon] = useState([]);
@@ -114,10 +116,7 @@ const Stats = ()=>{
 //display pokemon in terms of who has won the most.
     return(
         <div>
-            <h2 id="stats-head">
-                <span className="header-page">
-                    S t a t s</span>
-            </h2>
+            <Header />
 
             <label form="sort">Sort by:</label>
             <select name="sort" id="sort" value={statSorter} onChange={(event)=>{setStatSorter(event.target.value), console.log(event.target.value)}} >

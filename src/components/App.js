@@ -14,16 +14,14 @@ import './css/stats.css'
 import './css/about.css'
 import './css/who.css'
 
+import Header from './Header'
+
 const App = () =>{
     const [pokemonScaler, setPokemonScaler] = useState({});
 
     return(
         <div>
-            <header className="header-main">
-                {/* <h1>Pokemon Picker!</h1> */}
-                <img id="head-img" src="https://i.imgur.com/xotOQCg.png"></img>
-                <Navbar />
-            </header>
+            {/* <Header /> */}
             
             <Outlet context={{
                 pokemonScalerObj: [pokemonScaler,setPokemonScaler]

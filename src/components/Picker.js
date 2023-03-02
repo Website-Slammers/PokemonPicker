@@ -212,8 +212,14 @@ const Picker = () =>{
     
     return(
         
-        <div>
+        <div className="picker">
             <Header />
+            <header>
+                <h2>
+                    <span className="header-page header-page--block">
+                        P i c k- a- </span><span className="header-page header-page--block">p o k e m o n !</span>
+                </h2>
+            </header>
 
             <div id="left-and-right-container">
             {!Object.keys(pokemonDataLeft).length?<div>There's no data</div>:

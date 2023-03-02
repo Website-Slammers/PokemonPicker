@@ -1,5 +1,10 @@
 /* PICKER Start */
 
+.picker {
+  background-color: #000065;
+  padding-bottom: 40px;
+}
+
 #left-and-right-container {
   display: flex;
   justify-content: center;

@@ -115,8 +115,12 @@ const Stats = ()=>{
 
 //display pokemon in terms of who has won the most.
     return(
-        <div>
+        <div className="stats">
             <Header />
+            <h2 id="stats-head">
+                <span className="header-page">
+                    S t a t s</span>
+            </h2>
 
             <label form="sort">Sort by:</label>
             <select name="sort" id="sort" value={statSorter} onChange={(event)=>{setStatSorter(event.target.value), console.log(event.target.value)}} >

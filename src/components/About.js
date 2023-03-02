@@ -8,7 +8,10 @@ const About = ()=>{
     return(
         <div id="about-return">
             <Header />
-            
+            <h2>
+                <span className="header-page">
+                    O u r - S t o r y</span>
+            </h2>
             <div className="about-article-containerA">
                 <div id="about-article-flexbox">
                     <article>

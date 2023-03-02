@@ -1,6 +1,10 @@
 /* ABOUT Start */
 
 #about-return {
+
+  background-color: #000065;
+  padding-bottom: 40px;
+  
   display: flex;
   flex-direction: column;
   align-content: center;

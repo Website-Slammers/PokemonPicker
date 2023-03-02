@@ -1,5 +1,12 @@
 /* STATS Start */
 
+.stats {
+  
+  background-color: #000065;
+  padding-bottom: 40px;
+
+}
+
 .pokeContainer{
   display:flex;
   width:100vw;
